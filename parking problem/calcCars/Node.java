@@ -1,5 +1,12 @@
 package calcCars;
 
+/**
+ * this class is represent a node in the LinkedListCycle class, each node has a
+ * pointer to the next node, a pointer to the previous node, head and data
+ * 
+ * @author spyro
+ *
+ */
 public class Node {
 	char data;
 	Node prev, next;
