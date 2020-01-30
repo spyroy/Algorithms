@@ -10,11 +10,11 @@ import java.util.Random;
  * 
  * solution: Alice says what she got, and Bob says the opposite of what he got.
  * 
- * AliceGot    ||    BobGot    ||    Alice and Bob says what they got (50%)    ||    both says head (75%)  ||    Alice says what she got and Bob says opposite (100%)
- * tails		     tails		   					won :)									lost :(									won :)
- * tails		     head							lost :(									won :)									won :)
- * head			     tails							lost :(									won :)									won :)
- * head			     head							won :)									won :)									won :)
+ * *AliceGot*||*BobGot*||*Alice and Bob says what they got (50%)*||*both says head (75%)*||*Alice says what she got and Bob says opposite (100%)*||
+ *   tails	     tails		   		   won :)								  lost :(								    won :)
+ *   tails	     head				   lost :(								  won :)								    won :)
+ *   head		 tails				   lost :(								  won :)								    won :)
+ *   head		 head				   won :)								  won :)								    won :)
  * 
  * @author spyro
  *
