@@ -9,14 +9,15 @@ package TurtleAndRabbit;
  * rabbit did i = number of steps the turtle did i*2 = number of steps the
  * rabbit did we can determine that i = np + k , 2i = nq + k -> 2np + 2k = nq +
  * k -> k = n(q-2p) meaning that k is a multiple of n which means they meet at
- * the starting point
- * 
+ * the starting point.
+ * [assuming all cars are marked differently]!
+ *   
  * @author spyro
  *
  */
 public class Cycle {
 
-	final static int nLetters = 23, size = 30;// size of list and numbers of letters(24)
+	final static int nLetters = 23, size = 26;// size of list and numbers of letters(24)
 
 	public static boolean ifCycle(LinkedListCycle cars) {
 		boolean flag = true;// loop condition
@@ -50,7 +51,7 @@ public class Cycle {
 	public static void main(String[] args) {
 		LinkedListCycle cars = new LinkedListCycle();
 		for (int i = 0; i < size; i++) {
-			char c = (char) ('a' + (int) (Math.random() * nLetters));
+			char c = (char) ('a' + i);
 			cars.add(c);
 		}
 		System.out.println(cars.toString());
