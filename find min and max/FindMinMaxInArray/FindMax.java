@@ -97,6 +97,8 @@ public class FindMax {
 	 * @return
 	 */
 	static int comparisons = 0;
+
+	// recursion to find the biggest number
 	public static int Get2Max(Node arr[], int low, int high) {
 		int index;
 		int middle;
@@ -104,46 +106,49 @@ public class FindMax {
 		int j;
 		if (low < high) {
 			index = 0;
-			middle = (low + high)/2;
-			i = Get2Max(arr,low,middle);
-			j = Get2Max(arr,middle+1,high);
+			middle = (low + high) / 2;
+			i = Get2Max(arr, low, middle);// left part of the array
+			j = Get2Max(arr, middle + 1, high);// right part of the array
 			comparisons++;
-			
-			if(arr[i].num > arr[j].num) {
+
+			if (arr[i].num > arr[j].num) {
 				arr[i].st.push(arr[j].num);
 				index = i;
-			}
-			else {
+			} else {
 				arr[j].st.push(arr[i].num);
 				index = j;
 			}
 			return index;
-		}
-		else {
+		} else {
 			return low;
 		}
 	}
-	
-	public static void Get2Max(int[]a) {
+
+	/**
+	 * extracting the max2 from the stack of the biggest element in the array
+	 * 
+	 * @param a
+	 */
+	public static void Get2Max(int[] a) {
 		int index;
 		int max2;
 		Node[] arr = new Node[a.length];
-		
-		for(int i = 0; i < a.length; i++) {
+
+		for (int i = 0; i < a.length; i++) {
 			arr[i] = new Node(a[i]);
 		}
-		index = Get2Max(arr,0,a.length-1);
-		System.out.println("index of max1 = "+index+"\nmax1 = "+arr[index].num);
+		index = Get2Max(arr, 0, a.length - 1);
+		System.out.println("index of max1 = " + index + "\nmax1 = " + arr[index].num);
 		max2 = arr[index].st.pop();
-		
-		while(!arr[index].st.isEmpty()) {
+
+		while (!arr[index].st.isEmpty()) {
 			int tmp = arr[index].st.pop();
 			comparisons++;
-			if(tmp > max2) {
+			if (tmp > max2) {
 				max2 = tmp;
 			}
 		}
-		System.out.println("max2 = "+max2);
+		System.out.println("max2 = " + max2);
 		System.out.println("number of comparisons is: " + comparisons);
 	}
 
