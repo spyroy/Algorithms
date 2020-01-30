@@ -1,5 +1,15 @@
-package calcCars;
+package TurtleAndRabbit_arm;
 
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+/**
+ * this class represents a linked list with a cycle, it has a pointer to the
+ * head which represents the start of the cycle, and tail which is the previous
+ * of the head
+ * 
+ * @author spyro
+ *
+ */
 public class LinkedListCycle {// Double Cycle Linked List
 	private Node head, tail;
 
@@ -8,6 +18,12 @@ public class LinkedListCycle {// Double Cycle Linked List
 		head = tail = null;
 	}
 
+	/**
+	 * this function will add an element to the list, the element will become the
+	 * tail
+	 * 
+	 * @param obj
+	 */
 	// Appends the specified element to the end of this list.
 	public void add(char obj) {
 		if (head == null) {
@@ -21,6 +37,13 @@ public class LinkedListCycle {// Double Cycle Linked List
 			head.prev = tail;
 		}
 	}
+	
+	public boolean hasNext(Node n) {
+		if(n.next == null)
+			return false;
+		return true;
+	}
+	
 
 	public Node getHead() {
 		return head;
@@ -29,6 +52,7 @@ public class LinkedListCycle {// Double Cycle Linked List
 	public Node getNext(Node n) {
 		return n.next;
 	}
+	
 
 	public String toString() {
 		String s = "[";

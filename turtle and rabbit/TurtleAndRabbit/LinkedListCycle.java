@@ -1,5 +1,14 @@
-package calcCars;
+package TurtleAndRabbit;
 
+
+/**
+ * this class represents a linked list with a cycle, it has a pointer to the
+ * head which represents the start of the cycle, and tail which is the previous
+ * of the head
+ * 
+ * @author spyro
+ *
+ */
 public class LinkedListCycle {// Double Cycle Linked List
 	private Node head, tail;
 
@@ -8,6 +17,12 @@ public class LinkedListCycle {// Double Cycle Linked List
 		head = tail = null;
 	}
 
+	/**
+	 * this function will add an element to the list, the element will become the
+	 * tail
+	 * 
+	 * @param obj
+	 */
 	// Appends the specified element to the end of this list.
 	public void add(char obj) {
 		if (head == null) {
