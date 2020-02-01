@@ -24,9 +24,12 @@ public class LogNPowerAndFibi {
 	public static int MatrixFibi(int n) {
 		int ans[][] = { { 1, 1 }, { 1, 0 } };
 		int A[][] = { { 1, 1 }, { 1, 0 } };
-		while (n != 1) {
+		n -= 2;
+		while (n != 0) {
+			if(n%2 == 1)
 				ans = multiplyMatrices(ans, A,2,2,2);
-			n = n-1;
+			A = multiplyMatrices(A,A,2,2,2);
+			n = n/2;
 		}
 		return ans[0][0];
 	}
