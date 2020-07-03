@@ -2,6 +2,7 @@ package Graph_Related_algorithms;
 
 import java.util.ArrayList;
 
+
 public class FireTree {
 	ArrayList<Integer> tree[];
 	int n;
@@ -20,13 +21,18 @@ public class FireTree {
 	/**
 	 * 
 	 * @return the Diameter of the tree
+	 * @throws Exception 
 	 */
-	public int findDiameter() {
+	public int findDiameter() throws Exception {
 		ArrayList<Integer> leaves = new ArrayList<Integer>();
 		for (int i = 0; i < n; i++) {
 			degree[i] = tree[i].size();
 			if (degree[i] == 1)
 				leaves.add(i);
+		}
+		isTree t = new isTree(degree);
+		if(!t.isItTree()) {
+			throw new Exception("this is not a tree!");
 		}
 		int leaf = 0;
 		int vertex = 0;
@@ -82,8 +88,15 @@ public class FireTree {
         al[8].add(4);
         al[9].add(4);
         
-        FireTree ft = new FireTree(al);
-        ft.findDiameter();
+        FireTree ft;
+		try {
+			ft = new FireTree(al);
+			ft.findDiameter();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+      
         
         /*
                                                      0
